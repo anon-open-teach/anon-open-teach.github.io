@@ -406,21 +406,17 @@ pre {
     </div>
 
     <div id="authors">
-        <center>
+        <!-- <center>
             <div class="author-row-new">
                 <a href="">ABCD*</a>,
                 <a href="">EFGH*</a>
             </div>
         </center>
         <center>
-        <!-- <div class="affiliations">
-            <span><sup>1</sup> Improbable AI Lab</span>
-            <span><sup>2</sup> MIT</span><br/>
-        </div> -->
 
         <br>* Equal contribution
 
-        </center>
+        </center> -->
 
         <div style="clear: both">
             <div class="paper-btn-parent">
@@ -468,153 +464,292 @@ pre {
         }
     </style>
 
-    <!-- <section id="teaser-image">
-        <center>
-            <figure>
-                <source src="./mfiles/video.m4v" type="video/mp4">
-            </figure>
-        </center>
-    </section> -->
-    
-    
-
     
     <section id="abstract"/>
         <hr>
         <h2>Abstract</h2>
         <div class="flex-row">
             <p>
-                While imitation learning provides us with an efficient toolkit to train robots, learning skills that are robust to 
-                environment variations remains a significant challenge. Current approaches address this challenge by relying either
-                on large amounts of demonstrations that span environment variations or on handcrafted reward functions that require state estimates.
-                Both directions are not scalable to fast imitation. In this work, we present Fast Imitation of Skills from Humans (FISH), a
-                new imitation learning approach that can learn robust visual skills with less than a minute of human demonstrations. Given a
-                weak base-policy trained by offline imitation of demonstrations, FISH computes rewards that correspond to the “match” between
-                the robot’s behavior and the demonstrations. These rewards are then used to adaptively update a residual policy that adds
-                on to the base-policy. Across all tasks, FISH requires at most twenty minutes of interactive learning to imitate demonstrations
-                on object configurations that were not seen in the demonstrations. Importantly, FISH is constructed to be versatile, which allows it
-                to be used across robot morphologies (e.g. xArm, Allegro, Stretch) and camera configurations (e.g. third-person, eye-in-hand). Our
-                experimental evaluations on 9 different tasks show that FISH achieves an average success rate of 93%, which is around 3.8× higher 
-                than prior state-of-the-art methods.
+                Open-sourced, user-friendly tools form the bedrock
+                of scientific advancement across disciplines. The widespread
+                adoption of data-driven learning has led to remarkable progress
+                in multi-fingered dexterity, bimanual manipulation, and applica-
+                tions ranging from logistics to home robotics. However, existing
+                data collection platforms are often proprietary, costly, or tailored
+                to specific robotic morphologies. We present OPEN TEACH, a new
+                teleoperation system leveraging VR headsets to immerse users in
+                mixed reality for intuitive robot control. Built on the affordable
+                Meta Quest 3, which costs $500, OPEN TEACH enables real-time
+                control of various robots, including multi-fingered hands and
+                bimanual arms, through an easy-to-use app. Using natural hand
+                gestures and movements, users can manipulate robots at up to
+                90Hz with smooth visual feedback and interface widgets offering
+                closeup environment views. We demonstrate OPEN TEACH’s
+                versatility across 35 tasks on different robots. A comprehensive
+                user study indicates significant improvement in teleoperation
+                capability over the AnyTeleop framework. Further experiments
+                exhibit the collected data’s compatibility with policy learning
+                on 10 dexterous and contact-rich manipulation tasks. Currently
+                supporting Franka, xArm, Jaco, and Allegro platforms, OPEN
+                TEACH is fully open-sourced to promote broader adoption.
             </p>
         </div>
     </section>
     <section id="method"/>
-        <hr>
-        <h2>Fast Imitation of Skills from Humans (FISH)</h2>
+        <!-- <hr> -->
+        <!-- <h2>Fast Imitation of Skills from Humans (FISH)</h2> -->
 
             <br><br>
             <div class="mx-auto">
-                <img class="card-img-top" src="./mfiles/gifs/main.gif" style="width:900">
+                <img class="card-img-top" src="./mfiles/images/intro_compressed.jpg" style="width:900">
+                <!-- <embed src="./mfiles/images/intro_compressed.pdf" width="900px" height="2100px" /> -->
             </div>
-<!-- 
-            <div class="mx-auto">
-                <center><img class="card-img-top" src="mfiles/method.png" style="width:950px"></center>
-            </div> -->
 
-            <!-- <br> -->
-<!-- 
-            <center><strong>A schematic of FISH. The first phase obtains a base policy
-                through offline imitation from demonstrations. The second phase
-                learns a residual model from online interactions.</strong></center> -->
+    <!-- Video style -->
+    <style>
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    
+        video {
+            display: block;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+    </style>
+    <section></section>
 
+    <section>
+        <hr>
+        <h2>Passthrough</h2>
+
+        <label for="video-select">Select a task:</label>
+        <select id="video-select" onchange="displayVideo()">
+            <option value="mfiles/videos/passthrough_basket_4x.mp4">Organize things in a basket</option>
+            <option value="mfiles/videos/passthrough_make_sandwich_8x.mp4">Make a sandwich</option>
+            <option value="mfiles/videos/passthrough_kinova_iron_4x.mp4">Iron a towel</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo() {
+                var selectElement = document.getElementById("video-select");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo();
+        </script>
+        <br><br>
+        <hr>
+
+        <br><br>
+        <h2>Tasks</h2>
+
+        <br>
+        <h3> Franka-Allegro</h3>
+        <label for="video-select1">Select a task:</label>
+        <select id="video-select1" onchange="displayVideo()">
+            <option value="mfiles/videos/muffin_in_oven.mp4">Organize things in a basket</option>
+            <option value="mfiles/videos/pick_basket_8x.mp4">Make a sandwich</option>
+            <option value="mfiles/videos/pick_tea_sachet_1x.mp4">Iron a towel</option>
+            <option value="mfiles/videos/slot_battery_2x.mp4">Slot battery</option>
+            <iption value="mfiles/videos/box_open_2x.mp4">Open a box</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video1" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo() {
+                var selectElement = document.getElementById("video-select1");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video1");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo();
+        </script>
+
+        <h3> Kinova-Allegro</h3>
+        <label for="video-select2">Select a task:</label>
+        <select id="video-select2" onchange="displayVideo()">
+            <option value="mfiles/videos/iron_cloth_4x.mp4">Iron cloth</option>
+            <option value="mfiles/videos/laptop_open_2x.mp4">Open laptop</option>
+            <option value="mfiles/videos/stack_cubes_8x.mp4">Stack cubes</option>
+            <option value="mfiles/videos/write_alphabet_4x.mp4">Write alphabet</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video2" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo() {
+                var selectElement = document.getElementById("video-select2");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video2");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo();
+        </script>
+
+        <br>
+        <h3> Bimanual</h3>
+        <label for="video-select3">Select a task:</label>
+        <select id="video-select3" onchange="displayVideo()">
+            <option value="mfiles/videos/make_sandwich_8x.mp4">Iron cloth</option>
+            <option value="mfiles/videos/insert_usb_2x.mp4">Open laptop</option>
+            <option value="mfiles/videos/slice_cucumber.mp4">Stack cubes</option>
+            <option value="mfiles/videos/sweep_2x.mp4">Write alphabet</option>
+            <option value="mfiles/videos/toast_bread_4x.mp4">Write alphabet</option>
+            <option value="mfiles/videos/unfold_bimanual_4x.mp4">Write alphabet</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video3" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo() {
+                var selectElement = document.getElementById("video-select3");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video3");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo();
+        </script>
+
+        <br>
+        <h3> Allegro sim</h3>
+        <label for="video-select4">Select a task:</label>
+        <select id="video-select4" onchange="displayVideo()">
+            <option value="mfiles/videos/make_sandwich_8x.mp4">Iron cloth</option>
+            <option value="mfiles/videos/insert_usb_2x.mp4">Open laptop</option>
+            <option value="mfiles/videos/slice_cucumber.mp4">Stack cubes</option>
+            <option value="mfiles/videos/sweep_2x.mp4">Write alphabet</option>
+            <option value="mfiles/videos/toast_bread_4x.mp4">Write alphabet</option>
+            <option value="mfiles/videos/unfold_bimanual_4x.mp4">Write alphabet</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video4" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo() {
+                var selectElement = document.getElementById("video-select4");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video4");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo();
+        </script>
+
+        <br>
+        <h3> LIBERO sim</h3>
+        <label for="video-select5">Select a task:</label>
+        <select id="video-select5" onchange="displayVideo()">
+            <option value="mfiles/videos/make_sandwich_8x.mp4">Iron cloth</option>
+            <option value="mfiles/videos/insert_usb_2x.mp4">Open laptop</option>
+            <option value="mfiles/videos/slice_cucumber.mp4">Stack cubes</option>
+            <option value="mfiles/videos/sweep_2x.mp4">Write alphabet</option>
+            <option value="mfiles/videos/toast_bread_4x.mp4">Write alphabet</option>
+            <option value="mfiles/videos/unfold_bimanual_4x.mp4">Write alphabet</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video5" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo() {
+                var selectElement = document.getElementById("video-select5");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video5");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo();
+        </script>
+        <br><br>
+        <hr>
+
+        <br><br>
+        <h2>Policy Learning</h2>
+        <label for="video-select6">Select a task:</label>
+        <select id="video-select6" onchange="displayVideo()">
+            <option value="mfiles/videos/make_sandwich_8x.mp4">Iron cloth</option>
+            <option value="mfiles/videos/insert_usb_2x.mp4">Open laptop</option>
+            <option value="mfiles/videos/slice_cucumber.mp4">Stack cubes</option>
+            <option value="mfiles/videos/sweep_2x.mp4">Write alphabet</option>
+            <option value="mfiles/videos/toast_bread_4x.mp4">Write alphabet</option>
+            <option value="mfiles/videos/unfold_bimanual_4x.mp4">Write alphabet</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video6" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo() {
+                var selectElement = document.getElementById("video-select6");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video6");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo();
+        </script>
+        <br><br>
+        <hr>
+
+        <br><br>
+        <h2>Comparison with Baselines</h2>
+
+        <br><br>
+        <hr>
+
+        <br><br>
+        <h2>User Study</h2>
+
+        <br><br>
+        <hr>
 
     </section>
-        
 
-    <section id="results">
-        <hr>
-        <h2>Method</h2>
-            <br>
-            FISH operates in two phases. The first phase obtains a non-parametric base policy
-            through offline imitation from demonstrations. In the second phase, corrective residuals over 
-            this base policy are learned through inverse RL using optimal transport (OT) based trajectory-matching 
-            between the expert and agent behavior.
-            <br><br>
-
-            <div class="mx-auto">
-                <center><img class="card-img-top" src="mfiles/method.png" style="width:700px"></center>
-            </div>
-            <br><br>
-
-        <hr>
-
-
-        <hr>
-        <h2>Robot Results</h2>
-            <br>
-            We evaluate FISH on 9 tasks of varying difficulty across 3 different robot morphologies - a robot hand, a robotic arm, and a mobile robot. We observe an average success rate of 93%, which is 3.8x higher than prior state-of-the-art methods in visual imitation and IRL.
-            <div class="mx-auto">
-                <center><img class="card-img-top" src="mfiles/gifs/robot_results.gif" style="width:950px"></center>
-            </div>
-
-        <br>
-        <hr>
-
-        <h2>Generalization to New Object Configurations</h2>
-        <br>
-        FISH exhibits generalization to new object positions and robot initializations unseen in the expert demonstrations. In the leftmost column, the region of operation for each task 
-        is denoted by the blue box, &times on the images indicate positions where the demonstrations are collected, the green marks 
-        indicate positions where FISH succeeds and the red ones indicate failure modes.
-        <br><br>
-        <div class="mx-auto">
-            <img class="card-img-top" src="mfiles/gifs/pos_variation.gif" style="width:900px">
-        </div>
-        <br>
-        <hr>
-
-        <h2>Generalization to New Objects</h2>
-        <br>
-        Interestingly, FISH also exhibits generalization to new objects in the form of different bills and cards for the picking-up task and different types of bread for the flipping task. However, it fails on extreme variations in the visual and dynamic properties of the object.
-        <br><br>
-        <div class="mx-auto">
-            <center><img class="card-img-top" src="mfiles/gifs/variations_bagel.gif" style="width:800px"></center>
-        </div>
-        <br>
-        <div class="mx-auto">
-            <center><img class="card-img-top" src="mfiles/gifs/variations_slide.gif" style="width:800px"></center>
-        </div>
-        <br><br>
-        <hr>
-
-        <h2>Training Runs</h2>
-        <br>
-        We provide videos displaying the progression of learning during the residual learning phase in FISH.
-        <br><br>
-        
-        <table width="100%">
-            <tr>
-            <td align="left" valign="top" width="50%">
-                <video id="home1" width="500" height="300" poster="mfiles/videos/Flip Bagel.png" controls="controls" preload="none"> 
-                    <source type="video/mp4" src="mfiles/videos/Flip Bagel.m4v" /> 
-                </video>
-            </td>
-            <td align="left" valign="top" width="50%">
-                <video id="home2" width="500" height="300" poster="mfiles/videos/Cube Flip.png" controls="controls" preload="none"> 
-                    <source type="video/mp4" src="mfiles/videos/Cube Flip.m4v" /> 
-                </video>
-            </td
-            </tr>
-        </table>
-        <table width="100%">
-            <tr>
-            <td align="left" valign="top" width="50%">
-                <video id="home1" width="500" height="300" poster="mfiles/videos/Bottle Spin.png" controls="controls" preload="none"> 
-                    <source type="video/mp4" src="mfiles/videos/Bottle Spin.m4v" /> 
-                </video>
-            </td>
-            <td align="left" valign="top" width="50%">
-                <video id="home2" width="500" height="300" poster="mfiles/videos/Card Slide.png" controls="controls" preload="none"> 
-                    <source type="video/mp4" src="mfiles/videos/Card Slide.m4v" /> 
-                </video>
-            </td
-            </tr>
-        </table>
-
-        <br><br>
-        <hr>
-
-    </section>
    
 
     <section>
