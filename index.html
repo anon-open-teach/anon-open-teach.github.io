@@ -567,7 +567,7 @@ pre {
         <br>
         <h3> Franka-Allegro</h3>
         <label for="video-select1">Task:</label>
-        <select id="video-select1" onchange="displayVideo()">
+        <select id="video-select1" onchange="displayVideo1()">
             <iption value="mfiles/videos/franka allegro/pick_basket_8x.mp4">Pack and Lift a Basket (8X)</option>
             <option value="mfiles/videos/franka allegro/muffin_in_oven.mp4">Put Muffin in the Oven (8X)</option>
             <iption value="mfiles/videos/franka allegro/pick_tea_sachet_1x.mp4">Pick Up Tea Satchet (1X)</option>
@@ -586,7 +586,7 @@ pre {
         </div>
 
         <script>
-            function displayVideo() {
+            function displayVideo1() {
                 var selectElement = document.getElementById("video-select1");
                 var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
                 var videoElement = document.getElementById("selected-video1");
@@ -594,12 +594,12 @@ pre {
             }
 
             // Display the first video when the page loads
-            displayVideo();
+            displayVideo1();
         </script>
 
         <h3> Kinova-Allegro</h3>
         <label for="video-select2">Task:</label>
-        <select id="video-select2" onchange="displayVideo()">
+        <select id="video-select2" onchange="displayVideo2()">
             <option value="mfiles/videos/kinova allegro/iron_cloth_4x.mp4">Iron Towel (4X)</option>
             <option value="mfiles/videos/kinova allegro/laptop_open_2x.mp4">Open Laptop (2X)</option>
             <option value="mfiles/videos/kinova allegro/open_box_pick_object_8x.mp4">Open Box and Pick Object (8X)</option>
@@ -618,7 +618,7 @@ pre {
         </div>
 
         <script>
-            function displayVideo() {
+            function displayVideo2() {
                 var selectElement = document.getElementById("video-select2");
                 var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
                 var videoElement = document.getElementById("selected-video2");
@@ -626,13 +626,13 @@ pre {
             }
 
             // Display the first video when the page loads
-            displayVideo();
+            displayVideo2();
         </script>
 
         <br>
         <h3> Bimanual</h3>
         <label for="video-select3">Task:</label>
-        <select id="video-select3" onchange="displayVideo()">
+        <select id="video-select3" onchange="displayVideo3()">
             <option value="mfiles/videos/bimanual/make_sandwich_8x.mp4">Make Sandwich (8X)</option>
             <option value="mfiles/videos/bimanual/insert_usb_2x.mp4">Insert USB (2X)</option>
             <option value="mfiles/videos/bimanual/slice_cucumber.mp4">Slice Cucumber (8X)</option>
@@ -651,7 +651,7 @@ pre {
         </div>
 
         <script>
-            function displayVideo() {
+            function displayVideo3() {
                 var selectElement = document.getElementById("video-select3");
                 var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
                 var videoElement = document.getElementById("selected-video3");
@@ -659,13 +659,13 @@ pre {
             }
 
             // Display the first video when the page loads
-            displayVideo();
+            displayVideo3();
         </script>
 
         <br>
         <h3> Allegro sim</h3>
         <label for="video-select4">Task:</label>
-        <select id="video-select4" onchange="displayVideo()">
+        <select id="video-select4" onchange="displayVideo4()">
             <option value="mfiles/videos/allegro sim/flip_cube_1x.mp4">Flip Cube</option>
             <option value="mfiles/videos/allegro sim/grasp sponge.mp4">Flip Sponge</option>
             <option value="mfiles/videos/allegro sim/pinch_grasp.mov">Pinch Grasp</option>
@@ -678,7 +678,7 @@ pre {
         </div>
 
         <script>
-            function displayVideo() {
+            function displayVideo4() {
                 var selectElement = document.getElementById("video-select4");
                 var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
                 var videoElement = document.getElementById("selected-video4");
@@ -686,13 +686,13 @@ pre {
             }
 
             // Display the first video when the page loads
-            displayVideo();
+            displayVideo4();
         </script>
 
         <br>
         <h3> LIBERO sim</h3>
         <label for="video-select5">Task:</label>
-        <select id="video-select5" onchange="displayVideo()">
+        <select id="video-select5" onchange="displayVideo5()">
             <option value="mfiles/videos/libero/organize_things_in_a_basket_1x.mp4">Organize Basket</option>
             <option value="mfiles/videos/libero/put_pan_on_stove.mp4">Put Pan on Stove and Turn it On</option>
             <option value="mfiles/videos/libero/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate.mp4">Place White Mug on Left Plate</option>
@@ -707,7 +707,7 @@ pre {
         </div>
 
         <script>
-            function displayVideo() {
+            function displayVideo5() {
                 var selectElement = document.getElementById("video-select5");
                 var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
                 var videoElement = document.getElementById("selected-video5");
@@ -715,7 +715,7 @@ pre {
             }
 
             // Display the first video when the page loads
-            displayVideo();
+            displayVideo5();
         </script>
         <br><br>
         <hr>
@@ -729,7 +729,7 @@ pre {
         <br><br>
 
         <label for="video-select6">Task:</label>
-        <select id="video-select6" onchange="displayVideo()">
+        <select id="video-select6" onchange="displayVideo6()">
             <option value="mfiles/videos/franka allegro/pick_tea_sachet_1x.mp4">Pick Up Tea Satchet (1X)</option>
             <option value="mfiles/videos/franka allegro/box_open_2x.mp4">Open Box (2X)</option>
             <option value="mfiles/videos/franka allegro/grasp sponge_2x.mp4">Grasp Sponge (2X)</option>
@@ -749,7 +749,7 @@ pre {
         </div>
 
         <script>
-            function displayVideo() {
+            function displayVideo6() {
                 var selectElement = document.getElementById("video-select6");
                 var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
                 var videoElement = document.getElementById("selected-video6");
@@ -757,7 +757,7 @@ pre {
             }
 
             // Display the first video when the page loads
-            displayVideo();
+            displayVideo6();
         </script>
         <br><br>
         <hr>
@@ -784,7 +784,7 @@ pre {
         
         <br><br>
         <label for="video-select7">Tasks performed by users:</label>
-        <select id="video-select7" onchange="displayVideo()">
+        <select id="video-select7" onchange="displayVideo7()">
             <option value="mfiles/videos/user study/open_box_2x.mp4">Open Box of Mints (2X)</option>
             <option value="mfiles/videos/user study/flip_cube_1x.mp4">Flip Cube (1X)</option>
             <option value="mfiles/videos/user study/pinch_grasp_1x.mp4">Pinch Grasp (1X)</option>
@@ -799,7 +799,7 @@ pre {
         </div>
 
         <script>
-            function displayVideo() {
+            function displayVideo7() {
                 var selectElement = document.getElementById("video-select7");
                 var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
                 var videoElement = document.getElementById("selected-video7");
@@ -807,7 +807,7 @@ pre {
             }
 
             // Display the first video when the page loads
-            displayVideo();
+            displayVideo7();
         </script>
 
         <br><br>
