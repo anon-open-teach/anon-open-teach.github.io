@@ -405,8 +405,8 @@ pre {
         OPEN TEACH: A Versatile Teleoperation System for Robotic Manipulation
     </div>
 
-    <div id="authors">
-        <!-- <center>
+    <!-- <div id="authors">
+        <center>
             <div class="author-row-new">
                 <a href="">ABCD*</a>,
                 <a href="">EFGH*</a>
@@ -416,7 +416,7 @@ pre {
 
         <br>* Equal contribution
 
-        </center> -->
+        </center>
 
         <div style="clear: both">
             <div class="paper-btn-parent">
@@ -436,7 +436,7 @@ pre {
                 </a>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <br>
 
@@ -499,37 +499,43 @@ pre {
         <!-- <hr> -->
         <!-- <h2>Fast Imitation of Skills from Humans (FISH)</h2> -->
 
-            <br><br>
+        <br><br>
+        <center>
             <div class="mx-auto">
                 <img class="card-img-top" src="./mfiles/images/intro_compressed.jpg" style="width:900">
-                <!-- <embed src="./mfiles/images/intro_compressed.pdf" width="900px" height="2100px" /> -->
             </div>
+        </center>
 
-    <!-- Video style -->
-    <style>
-        select {
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-    
-        video {
-            display: block;
-            max-width: 500px;
-            margin-top: 20px;
-        }
-    </style>
-    <section></section>
+        <!-- Video style -->
+        <style>
+            select {
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 5px;
+            }
+        
+            video {
+                display: block;
+                max-width: 500px;
+                margin-top: 20px;
+            }
+        </style>
+    </section>
 
     <section>
         <hr>
-        <h2>Passthrough</h2>
-
-        <label for="video-select">Select a task:</label>
+        <h2>Hardware</h2>
+        OPEN TEACH utilizes the Quest 3 VR headset for teleoperation, providing low latency and high-frequency visual feedback. The Quest 3 is chosen for its affordability and accessibility.
+        Below we provide videos of the full-color passthrough provided by Quest 3, and the user interface of the Open Teach app. As shown, we implement a screen within the VR app that displays 
+        the feed from a camera positioned within the scene. This enables the user to view a robotic scene both through their eyes, via visual passthrough, as well as realtime streams from 
+        the robot’s camera. We emphasize the exceptional clarity of the Quest 3 visual passthrough, enabling users to perceive tasks in a 3D environment rather than solely on a 2D screen. 
+        Furthermore, the high-frequency, low-latency teleoperation facilitated by Open Teach allows users to observe real-time movements of the robot, enabling immediate corrections for any errors in its pose.
+        <br><br>
+        <label for="video-select">Passthrough videos:</label>
         <select id="video-select" onchange="displayVideo()">
-            <option value="mfiles/videos/passthrough_basket_4x.mp4">Organize things in a basket</option>
-            <option value="mfiles/videos/passthrough_make_sandwich_8x.mp4">Make a sandwich</option>
-            <option value="mfiles/videos/passthrough_kinova_iron_4x.mp4">Iron a towel</option>
+            <option value="mfiles/videos/passthrough/passthrough_make_sandwich_8x.mp4">Make sandwich (8X)</option>
+            <option value="mfiles/videos/passthrough/passthrough_basket_4x.mp4">Pack and Lift a Basket (4X)</option>
+            <option value="mfiles/videos/passthrough/passthrough_kinova_iron_4x.mp4">Iron Towel (4X)</option>
             <!-- Add more options as needed -->
         </select>
 
@@ -555,17 +561,23 @@ pre {
 
         <br><br>
         <h2>Tasks</h2>
-
+        Utilizing Open Teach, we execute a <strong><span style="color: green;">total of 35 tasks</span></strong> across three real-world environments and two simulated platforms,
+        each featuring distinct robot configurations. This underscores Open Teach's role as a versatile teleoperation 
+        platform, seamlessly compatible with various robot platforms and morphologies.
         <br>
         <h3> Franka-Allegro</h3>
-        <label for="video-select1">Select a task:</label>
+        <label for="video-select1">Task:</label>
         <select id="video-select1" onchange="displayVideo()">
-            <option value="mfiles/videos/muffin_in_oven.mp4">Organize things in a basket</option>
-            <option value="mfiles/videos/pick_basket_8x.mp4">Make a sandwich</option>
-            <option value="mfiles/videos/pick_tea_sachet_1x.mp4">Iron a towel</option>
-            <option value="mfiles/videos/slot_battery_2x.mp4">Slot battery</option>
-            <iption value="mfiles/videos/box_open_2x.mp4">Open a box</option>
-        </select>
+            <iption value="mfiles/videos/franka allegro/pick_basket_8x.mp4">Pack and Lift a Basket (8X)</option>
+            <option value="mfiles/videos/franka allegro/muffin_in_oven.mp4">Put Muffin in the Oven (8X)</option>
+            <iption value="mfiles/videos/franka allegro/pick_tea_sachet_1x.mp4">Pick Up Tea Satchet (1X)</option>
+            <option value="mfiles/videos/franka allegro/box_open_2x.mp4">Open Box (2X)</option>
+            <iption value="mfiles/videos/franka allegro/unlatch_box_open_4x.mp4">Undo Latch and Open Box (4X)</option>
+            <iption value="mfiles/videos/franka allegro/slot_battery_2x.mp4">Slot Battery (2X)</option>
+            <option value="mfiles/videos/franka allegro/grasp_and_twist_2x.mp4">Grasp Object and Twist (2X)</option>
+            <option value="mfiles/videos/franka allegro/grasp sponge_2x.mp4">Grasp Sponge (2X)</option>
+            <iption value="mfiles/videos/franka allegro/shell_game_8x.mp4">Shell Game (8X)</option>
+            </select>
 
         <div id="video-container">
             <video id="selected-video1" controls>
@@ -586,12 +598,17 @@ pre {
         </script>
 
         <h3> Kinova-Allegro</h3>
-        <label for="video-select2">Select a task:</label>
+        <label for="video-select2">Task:</label>
         <select id="video-select2" onchange="displayVideo()">
-            <option value="mfiles/videos/iron_cloth_4x.mp4">Iron cloth</option>
-            <option value="mfiles/videos/laptop_open_2x.mp4">Open laptop</option>
-            <option value="mfiles/videos/stack_cubes_8x.mp4">Stack cubes</option>
-            <option value="mfiles/videos/write_alphabet_4x.mp4">Write alphabet</option>
+            <option value="mfiles/videos/kinova allegro/iron_cloth_4x.mp4">Iron Towel (4X)</option>
+            <option value="mfiles/videos/kinova allegro/laptop_open_2x.mp4">Open Laptop (2X)</option>
+            <option value="mfiles/videos/kinova allegro/open_box_pick_object_8x.mp4">Open Box and Pick Object (8X)</option>
+            <option value="mfiles/videos/kinova allegro/stack_cubes_8x.mp4">Stack Blocks (8X)</option>
+            <option value="mfiles/videos/kinova allegro/write_alphabet_4x.mp4">Write Alphabet (4X)</option>
+            <option value="mfiles/videos/kinova allegro/hit_hammer_8x.mp4">Hit Hammer (8X)</option>
+            <option value="mfiles/videos/kinova allegro/unfold_cloth_8x.mp4">Unfold Towel (8X)</option>
+            <option value="mfiles/videos/kinova allegro/open_ketchup_bottle_8x.mp4">Open Ketchup Bottle (8X)</option>
+            <option value="mfiles/videos/kinova allegro/slide_drawer_8x.mp4">Open Drawer (8X)</option>
         </select>
 
         <div id="video-container">
@@ -614,14 +631,17 @@ pre {
 
         <br>
         <h3> Bimanual</h3>
-        <label for="video-select3">Select a task:</label>
+        <label for="video-select3">Task:</label>
         <select id="video-select3" onchange="displayVideo()">
-            <option value="mfiles/videos/make_sandwich_8x.mp4">Iron cloth</option>
-            <option value="mfiles/videos/insert_usb_2x.mp4">Open laptop</option>
-            <option value="mfiles/videos/slice_cucumber.mp4">Stack cubes</option>
-            <option value="mfiles/videos/sweep_2x.mp4">Write alphabet</option>
-            <option value="mfiles/videos/toast_bread_4x.mp4">Write alphabet</option>
-            <option value="mfiles/videos/unfold_bimanual_4x.mp4">Write alphabet</option>
+            <option value="mfiles/videos/bimanual/make_sandwich_8x.mp4">Make Sandwich (8X)</option>
+            <option value="mfiles/videos/bimanual/insert_usb_2x.mp4">Insert USB (2X)</option>
+            <option value="mfiles/videos/bimanual/slice_cucumber.mp4">Slice Cucumber (8X)</option>
+            <option value="mfiles/videos/bimanual/toast_bread_4x.mp4">Toast Bread (4X)</option>
+            <option value="mfiles/videos/bimanual/sweep_2x.mp4">Sweep Dirt Off the Table (2X)</option>
+            <option value="mfiles/videos/bimanual/unfold_bimanual_4x.mp4">Unfold Cloth (4X)</option>
+            <option value="mfiles/videos/bimanual/can_handover_4x.mp4">Handover Can (4X)</option>
+            <option value="mfiles/videos/bimanual/uncap_marker_2x.mp4">Uncap Marker (2X)</option>
+            <option value="mfiles/videos/bimanual/pour_2x.mp4">Pour Sprinkles (2X)</option>
         </select>
 
         <div id="video-container">
@@ -644,14 +664,11 @@ pre {
 
         <br>
         <h3> Allegro sim</h3>
-        <label for="video-select4">Select a task:</label>
+        <label for="video-select4">Task:</label>
         <select id="video-select4" onchange="displayVideo()">
-            <option value="mfiles/videos/make_sandwich_8x.mp4">Iron cloth</option>
-            <option value="mfiles/videos/insert_usb_2x.mp4">Open laptop</option>
-            <option value="mfiles/videos/slice_cucumber.mp4">Stack cubes</option>
-            <option value="mfiles/videos/sweep_2x.mp4">Write alphabet</option>
-            <option value="mfiles/videos/toast_bread_4x.mp4">Write alphabet</option>
-            <option value="mfiles/videos/unfold_bimanual_4x.mp4">Write alphabet</option>
+            <option value="mfiles/videos/allegro sim/flip_cube_1x.mp4">Flip Cube</option>
+            <option value="mfiles/videos/allegro sim/grasp sponge.mp4">Flip Sponge</option>
+            <option value="mfiles/videos/allegro sim/pinch_grasp.mov">Pinch Grasp</option>
         </select>
 
         <div id="video-container">
@@ -674,14 +691,13 @@ pre {
 
         <br>
         <h3> LIBERO sim</h3>
-        <label for="video-select5">Select a task:</label>
+        <label for="video-select5">Task:</label>
         <select id="video-select5" onchange="displayVideo()">
-            <option value="mfiles/videos/make_sandwich_8x.mp4">Iron cloth</option>
-            <option value="mfiles/videos/insert_usb_2x.mp4">Open laptop</option>
-            <option value="mfiles/videos/slice_cucumber.mp4">Stack cubes</option>
-            <option value="mfiles/videos/sweep_2x.mp4">Write alphabet</option>
-            <option value="mfiles/videos/toast_bread_4x.mp4">Write alphabet</option>
-            <option value="mfiles/videos/unfold_bimanual_4x.mp4">Write alphabet</option>
+            <option value="mfiles/videos/libero/organize_things_in_a_basket_1x.mp4">Organize Basket</option>
+            <option value="mfiles/videos/libero/put_pan_on_stove.mp4">Put Pan on Stove and Turn it On</option>
+            <option value="mfiles/videos/libero/LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate.mp4">Place White Mug on Left Plate</option>
+            <option value="mfiles/videos/libero/KITCHEN_SCENE3_turn_on_the_stove.mp4">Turn on Stove</option>
+            <option value="mfiles/videos/libero/close_top_drawer.mp4">Close Top Drawer of Cabinet</option>
         </select>
 
         <div id="video-container">
@@ -706,14 +722,24 @@ pre {
 
         <br><br>
         <h2>Policy Learning</h2>
-        <label for="video-select6">Select a task:</label>
+        In addition to collecting demonstrations, we highlight the value of collected data in policy training across the Franka 
+        Allegro setup and two simulated environments: Libero and Allegro Sim. Using behavior cloning and inverse reinforcement 
+        learning, we train policies for 10 tasks, achieving an impressive <strong><span style="color: green;">average success rate of 87%</span></strong>. 
+        This validates the efficacy of the data acquired via Open Teach for policy learning.
+        <br><br>
+
+        <label for="video-select6">Task:</label>
         <select id="video-select6" onchange="displayVideo()">
-            <option value="mfiles/videos/make_sandwich_8x.mp4">Iron cloth</option>
-            <option value="mfiles/videos/insert_usb_2x.mp4">Open laptop</option>
-            <option value="mfiles/videos/slice_cucumber.mp4">Stack cubes</option>
-            <option value="mfiles/videos/sweep_2x.mp4">Write alphabet</option>
-            <option value="mfiles/videos/toast_bread_4x.mp4">Write alphabet</option>
-            <option value="mfiles/videos/unfold_bimanual_4x.mp4">Write alphabet</option>
+            <option value="mfiles/videos/franka allegro/pick_tea_sachet_1x.mp4">Pick Up Tea Satchet (1X)</option>
+            <option value="mfiles/videos/franka allegro/box_open_2x.mp4">Open Box (2X)</option>
+            <option value="mfiles/videos/franka allegro/grasp sponge_2x.mp4">Grasp Sponge (2X)</option>
+            <option value="mfiles/videos/franka allegro/grasp_and_twist_2x.mp4">Grasp Object and Twist (2X)</option>
+            <option value="mfiles/videos/allegro sim/flip_cube_1x.mp4">Flip Cube</option>
+            <option value="mfiles/videos/allegro sim/grasp sponge.mp4">Flip Sponge</option>
+            <option value="mfiles/videos/allegro sim/pinch_grasp.mov">Pinch Grasp</option>
+            <option value="mfiles/videos/libero/close_top_drawer.mp4">Close Top Drawer of Cabinet</option>
+            <option value="mfiles/videos/libero/KITCHEN_SCENE3_turn_on_the_stove.mp4">Turn on Stove</option>
+            <option value="mfiles/videos/unfold_bimanual_4x.mp4">Pick and Place Soup into Basket</option>
         </select>
 
         <div id="video-container">
@@ -738,12 +764,51 @@ pre {
 
         <br><br>
         <h2>Comparison with Baselines</h2>
-
+        We provide a comparison between existing teleoperation systems and observe that Open Teach is the only one that 
+        is <strong><span style="color: green;">calibration free, support multiple arms and hands and most importantly, is fully open source</span></strong>.
+        <br><br>
+        <center>
+            <div class="mx-auto">
+                <img class="card-img-top" src="./mfiles/images/comparison.png" style="width:700">
+            </div>
+        </center>
         <br><br>
         <hr>
 
         <br><br>
         <h2>User Study</h2>
+        We conducted a user study with 15 participants to assess the intuitiveness and user-friendliness of our framework for inexperienced users. 
+        We provide task performance videos from these users. Overall, we found that new users take <span class="blue">2.25x longer</span> and achieve 
+        a <span class="blue">success rate of 76%</span> compared to experts. This observation highlights that while our system is intuitive for new 
+        users, prolonged training can leads to further improvement in their performance.
+        
+        <br><br>
+        <label for="video-select7">Tasks performed by users:</label>
+        <select id="video-select7" onchange="displayVideo()">
+            <option value="mfiles/videos/user study/open_box_2x.mp4">Open Box of Mints (2X)</option>
+            <option value="mfiles/videos/user study/flip_cube_1x.mp4">Flip Cube (1X)</option>
+            <option value="mfiles/videos/user study/pinch_grasp_1x.mp4">Pinch Grasp (1X)</option>
+            <option value="mfiles/videos/user study/pour_4x.mp4">Pour (4X)</option>
+            <option value="mfiles/videos/user study/pick_n_place_2x.mp4">Pick and Place (2X)</option>
+        </select>
+
+        <div id="video-container">
+            <video id="selected-video7" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <script>
+            function displayVideo() {
+                var selectElement = document.getElementById("video-select7");
+                var selectedVideo = selectElement.options[selectElement.selectedIndex].value;
+                var videoElement = document.getElementById("selected-video7");
+                videoElement.src = selectedVideo;
+            }
+
+            // Display the first video when the page loads
+            displayVideo();
+        </script>
 
         <br><br>
         <hr>
